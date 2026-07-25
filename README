@@ -1,0 +1,7 @@
+This is my attempt at making the Dice Roller for my D&D and other table top games.
+Most games make use of d20, d12, d10, d100, d8, d6, and d4. 
+I will make use of modifiers that increase or decrease the chances of a thing happening
+I will have tests to make sure everything works as intended
+I will implement an encounter system with stylized themeing
+I will add a feature that will allow me to add creatures to the roster
+If all that succeds I will get some art and probably switch to another language
