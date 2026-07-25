@@ -2,7 +2,7 @@
 import random
 class Die:
     def __init__ (self, sides, modifier):
-        if sides > 2:
+        if sides < 2:
             raise ValueError ("A die must have at least two sides")
         elif type(sides) != int:
             raise ValueError("Number of sides must be an integer")
@@ -13,7 +13,7 @@ class Die:
         self.value = None
 
     def roll(self):
-        self.value = random.radint(1 + self.mod, self.sides + self.mod)
+        self.value = random.randint(1 + self.mod, self.sides + self.mod)
         return self.value
 
     def __repr__(self):
@@ -45,4 +45,11 @@ class Cup:
             self.roll_all()
         return sum(die.value for die in self.dice)
 
+    def advantage(self, disadvantage=False):
+        #intended to be used for choosing between two equal dice
+        if any(die.value is None for die in self.dice):
+            self.roll_all()
+        if disadvantage == True:
+            return min(die.value for die in self.dice)
+        return max(die.value for die in self.dice)
     
