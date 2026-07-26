@@ -1,7 +1,7 @@
 #d20, d100, d12, d10, d8, d6, d4, d2 and d* should be a class
 import random
 class Die:
-    def __init__ (self, sides, modifier):
+    def __init__ (self, sides:int, modifier:int):
         if sides < 2:
             raise ValueError ("A die must have at least two sides")
         elif type(sides) != int:
